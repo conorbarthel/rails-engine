@@ -15,10 +15,10 @@ describe "Merchants API" do
 
     #binding.pry
     expect(merchant).to have_key(:id)
-    expect(merchant[:id]).to be_an(Integer)
+    expect(merchant[:id]).to be_an(String)
 
-    expect(merchant).to have_key(:name)
-    expect(merchant[:name]).to be_a(String)
+    expect(merchant[:attributes]).to have_key(:name)
+    expect(merchant[:attributes][:name]).to be_a(String)
   end
 
   it "can get one merchant by its id" do
@@ -29,11 +29,12 @@ describe "Merchants API" do
     merchant = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
+    merchant_data = merchant[:data]
+    #binding.pry
+    expect(merchant_data).to have_key(:id)
+    expect(merchant_data[:id]).to eq("#{id}")
 
-    expect(merchant).to have_key(:id)
-    expect(merchant[:id]).to eq(id)
-
-    expect(merchant).to have_key(:name)
-    expect(merchant[:name]).to be_a(String)
+    expect(merchant_data[:attributes]).to have_key(:name)
+    expect(merchant_data[:attributes][:name]).to be_a(String)
   end
 end
