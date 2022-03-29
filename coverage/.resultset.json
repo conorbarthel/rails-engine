@@ -1,60 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/conorbarthel/turing/3_module/rails-engine/spec/requests/api/v1/items_request_spec.rb": {
+      "/Users/conorbarthel/turing/3_module/rails-engine/spec/models/item_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
+          2,
           null,
           null
         ]
@@ -83,6 +36,11 @@
           null,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -321,7 +279,7 @@
           null,
           null,
           1,
-          2,
+          1,
           null,
           null,
           null,
@@ -334,9 +292,9 @@
         "lines": [
           1,
           1,
-          5,
-          5,
-          5,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -345,7 +303,7 @@
         "lines": [
           1,
           1,
-          5,
+          1,
           null,
           null
         ]
@@ -362,50 +320,9 @@
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/Users/conorbarthel/turing/3_module/rails-engine/app/models/item.rb": {
         "lines": [
+          1,
           1,
           null
         ]
@@ -417,47 +334,25 @@
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/rails-engine/app/controllers/api/v1/items_controller.rb": {
+      "/Users/conorbarthel/turing/3_module/rails-engine/spec/models/merchant_spec.rb": {
         "lines": [
           1,
-          1,
-          1,
-          null,
           null,
           1,
           1,
+          2,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/conorbarthel/turing/3_module/rails-engine/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null
         ]
       },
       "/Users/conorbarthel/turing/3_module/rails-engine/app/models/merchant.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/conorbarthel/turing/3_module/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
-        "lines": [
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
           null
         ]
       }
     },
-    "timestamp": 1648517704
+    "timestamp": 1648580602
   }
 }
