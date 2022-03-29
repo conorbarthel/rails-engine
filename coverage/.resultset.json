@@ -1,13 +1,45 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/conorbarthel/turing/3_module/rails-engine/spec/models/item_spec.rb": {
+      "/Users/conorbarthel/turing/3_module/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          2,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
           null,
           null
         ]
@@ -279,7 +311,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -303,7 +335,7 @@
         "lines": [
           1,
           1,
-          1,
+          4,
           null,
           null
         ]
@@ -320,7 +352,7 @@
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/rails-engine/app/models/item.rb": {
+      "/Users/conorbarthel/turing/3_module/rails-engine/app/models/merchant.rb": {
         "lines": [
           1,
           1,
@@ -334,25 +366,35 @@
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/rails-engine/spec/models/merchant_spec.rb": {
+      "/Users/conorbarthel/turing/3_module/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
           null,
           1,
-          1,
-          2,
+          0,
+          null,
           null,
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/rails-engine/app/models/merchant.rb": {
+      "/Users/conorbarthel/turing/3_module/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/conorbarthel/turing/3_module/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
           1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1648580602
+    "timestamp": 1648581631
   }
 }

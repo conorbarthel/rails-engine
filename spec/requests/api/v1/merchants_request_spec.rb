@@ -9,10 +9,11 @@ describe "Merchants API" do
     expect(response).to be_successful
 
     merchants = JSON.parse(response.body, symbolize_names: true)
-    #binding.pry
-    expect(merchants.count).to eq(3)
-    merchant = merchants.first
 
+    expect(merchants[:data].count).to eq(3)
+    merchant = merchants[:data].first
+
+    #binding.pry
     expect(merchant).to have_key(:id)
     expect(merchant[:id]).to be_an(Integer)
 
