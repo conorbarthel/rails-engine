@@ -30,6 +30,7 @@ describe "Items API" do
   end
 
   it "can get one item by its id" do
+    merchant = Merchant.create!(name: 'Coca-Cola')
     id = create(:item).id
 
     get "/api/v1/items/#{id}"
