@@ -11,7 +11,7 @@ describe "Merchant items API" do
 
     merchant_items = JSON.parse(response.body, symbolize_names: true)
 
-    expect(merchant_items[:data].count).to eq(3)
+    expect(merchant_items[:data].count).to eq(5)
     merchant_item = merchant_items[:data].first
 
     expect(merchant_item).to have_key(:id)
@@ -24,6 +24,6 @@ describe "Merchant items API" do
     expect(merchant_item[:attributes][:description]).to be_a(String)
 
     expect(merchant_item[:attributes]).to have_key(:unit_price)
-    expect(merchant_item[:attributes][:unit_price]).to be_a(String)
+    expect(merchant_item[:attributes][:unit_price]).to be_a(Float)
   end
 end
