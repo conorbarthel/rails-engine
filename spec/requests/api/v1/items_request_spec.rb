@@ -61,14 +61,17 @@ describe "Items API" do
   end
 
   it "can create a new item" do
+    merch = create(:merchant)
     item_params = ({
                     name: 'Photo Album',
                     description: 'photos',
                     unit_price: 999,
+                    merchant_id: 5
                   })
     headers = {"CONTENT_TYPE" => "application/json"}
 
     post "/api/v1/items", headers: headers, params: JSON.generate(item: item_params)
+
     created_item = Item.last
 
     expect(response).to be_successful
