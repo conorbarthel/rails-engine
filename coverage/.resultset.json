@@ -113,6 +113,21 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -396,9 +411,9 @@
         "lines": [
           1,
           1,
-          23,
-          23,
-          23,
+          24,
+          24,
+          24,
           null,
           null
         ]
@@ -407,7 +422,7 @@
         "lines": [
           1,
           1,
-          8,
+          9,
           null,
           null
         ]
@@ -421,6 +436,8 @@
           1,
           null,
           1,
+          1,
+          null,
           null,
           null,
           null
@@ -471,6 +488,10 @@
           1,
           1,
           1,
+          1,
+          null,
+          0,
+          null,
           null,
           null,
           1,
@@ -505,8 +526,26 @@
           null,
           null
         ]
+      },
+      "/Users/conorbarthel/turing/3_module/rails-engine/app/controllers/api/v1/item_merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/conorbarthel/turing/3_module/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1648679641
+    "timestamp": 1648682850
   }
 }
