@@ -3,7 +3,9 @@ require 'rails_helper'
 describe "Merchant items API" do
   it "sends a list of merchant items" do
     merch = create(:merchant)
+    not_merch = create(:merchant)
     items = create_list(:item, 5, merchant: merch)
+    not_items = create_list(:item, 5, merchant: not_merch)
 
     get api_v1_merchant_items_path(merch)
 
@@ -25,5 +27,11 @@ describe "Merchant items API" do
 
     expect(merchant_item[:attributes]).to have_key(:unit_price)
     expect(merchant_item[:attributes][:unit_price]).to be_a(Float)
+  end
+
+  it "returns an error response when merchant is not found" do
+    id = 999
+
+    expect{get "/api/v1/merchants/#{id}"}.to raise_error(ActiveRecord::RecordNotFound)
   end
 end
