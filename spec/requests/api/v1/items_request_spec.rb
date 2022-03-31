@@ -113,7 +113,8 @@ describe "Items API" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
 
-    get api_v1_item_merchants_path(item.id)
+    #get "/api/v1/items/#{item.id}/merchant"
+    get api_v1_item_merchant_index_path(item)
 
     merchant = JSON.parse(response.body, symbolize_names: true)
     merchant = merchant[:data]
@@ -122,5 +123,6 @@ describe "Items API" do
 
     expect(merchant[:attributes]).to have_key(:name)
     expect(merchant[:attributes][:name]).to be_a(String)
+    expect{get api_v1_item_merchant_index_path("209")}.to raise_error(ActiveRecord::RecordNotFound)
   end
 end
