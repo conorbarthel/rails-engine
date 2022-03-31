@@ -42,4 +42,21 @@ describe "Merchants API" do
 
     expect{get "/api/v1/merchants/#{id}"}.to raise_error(ActiveRecord::RecordNotFound)
   end
+
+  it "can search for and find all merchants matching a partial search
+  and return them alphebeticaly" do
+    merchant1 = Merchant.create!(name: "Strause")
+    merchant2 = Merchant.create!(name: "Strause farms")
+    merchant3 = Merchant.create!(name: "stRAuSe Farmz")
+    not_merchant = Merchant.create!(name: "something else")
+    search = "rause"
+
+    get api_v1_merchants_find_all_path(name: search)
+    merchant_response = JSON.parse(response.body, symbolize_names: true)
+    merchant_data = merchant_response[:data]
+
+    expect(merchant_data.count).to eq(3)
+    expect(merchant_data.first[:attributes][:name]).to eq("Strause")
+    expect(merchant_data.last[:attributes][:name]).to eq("stRAuSe Farmz")
+  end
 end

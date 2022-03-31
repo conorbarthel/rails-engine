@@ -7,4 +7,16 @@ class Api::V1::MerchantsController < ApplicationController
     render json: MerchantSerializer.new(Merchant.find(params[:id]))
   end
 
+  def find_all
+    if params[:name] == nil
+      render json: { data: { error:"Parameter cannot be missing" } }, status: 200
+    else
+      merchant = Merchant.search(params[:name])
+      if merchant != nil
+        render json: MerchantSerializer.new(merchant)
+      else
+        render json: { data: { error:"No merchant data" } }, status: 200
+      end
+    end
+  end
 end
