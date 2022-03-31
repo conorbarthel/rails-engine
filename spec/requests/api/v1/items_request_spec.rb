@@ -143,28 +143,29 @@ describe "Items API" do
   it "can search for items and return up to one item with
   search terms" do
     merch = create(:merchant)
-    item = create(name: "Mouse",
+    item = Item.create!(name: "Mouse",
                   description: "Cursor",
                   unit_price: 9599,
-                  merchant_id: merch)
-    not_item = create(name: "keys",
+                  merchant_id: merch.id)
+    not_item = Item.create!(name: "keys",
                   description: "board",
                   unit_price: 12599,
-                  merchant_id: merch)
-    item2 = create(name: "Mouse 2",
+                  merchant_id: merch.id)
+    item2 = Item.create!(name: "Mouse 2",
                   description: "Cursor",
                   unit_price: 9899,
-                  merchant_id: merch)
+                  merchant_id: merch.id)
     search = "mouse"
 
     get api_v1_items_find_path, params: JSON.generate({search: search})
 
     item_response = JSON.parse(response.body, symbolize_names: true)
+    
     item_data = item_response[:data]
 
     expect(item_data[:attributes][:name]).to eq("Mouse")
     expect(item_data[:attributes][:name]).to_not eq("keys")
     expect(item_data[:attributes][:name]).to_not eq("Mouse 2")
-    expect(item_data.count).to eq(1)
+    expect(item_response.count).to eq(1)
   end
 end
