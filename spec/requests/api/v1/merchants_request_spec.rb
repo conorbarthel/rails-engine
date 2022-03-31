@@ -59,4 +59,34 @@ describe "Merchants API" do
     expect(merchant_data.first[:attributes][:name]).to eq("Strause")
     expect(merchant_data.last[:attributes][:name]).to eq("stRAuSe Farmz")
   end
+
+  it "returns an error if returns no results" do
+    merchant1 = Merchant.create!(name: "Strause")
+    merchant2 = Merchant.create!(name: "Strause farms")
+    merchant3 = Merchant.create!(name: "stRAuSe Farmz")
+    not_merchant = Merchant.create!(name: "something else")
+    search = "soup"
+
+    get api_v1_merchants_find_all_path(name: search)
+    merchant_response = JSON.parse(response.body, symbolize_names: true)
+    merchant_data = merchant_response[:data]
+
+    expect(response.status).to eq(400)
+    expect(merchant_data[:error]).to eq("No merchant data")
+  end
+
+  it "returns an error if search is blank" do
+    merchant1 = Merchant.create!(name: "Strause")
+    merchant2 = Merchant.create!(name: "Strause farms")
+    merchant3 = Merchant.create!(name: "stRAuSe Farmz")
+    not_merchant = Merchant.create!(name: "something else")
+    search = nil
+
+    get api_v1_merchants_find_all_path(name: search)
+    merchant_response = JSON.parse(response.body, symbolize_names: true)
+    merchant_data = merchant_response[:data]
+
+    expect(response.status).to eq(400)
+    expect(merchant_data[:error]).to eq("Parameter cannot be missing")
+  end
 end
