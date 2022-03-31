@@ -109,11 +109,25 @@ describe "Items API" do
     expect(item.name).to eq("New Item")
   end
 
+  it "can't update an item with a merchant id that doesn't exist" do
+    merch = create(:merchant)
+    item = create(:item, merchant: merch)
+    previous_name = Item.last.name
+    item_params = { name: "New Item", merchant_id: 555}
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/items/#{item.id}", headers: headers, params: JSON.generate({item: item_params})
+    item = Item.find_by(id: item.id)
+
+    expect(response.status).to eq(400)
+    expect(item.name).to eq(previous_name)
+    expect(item.name).to_not eq("New Item")
+  end
+
   it "can get an item's merchant" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
 
-    #get "/api/v1/items/#{item.id}/merchant"
     get api_v1_item_merchant_index_path(item)
 
     merchant = JSON.parse(response.body, symbolize_names: true)

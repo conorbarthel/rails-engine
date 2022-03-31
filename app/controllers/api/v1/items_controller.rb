@@ -18,11 +18,11 @@ class Api::V1::ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    item.update(item_params)
-    if item.id != nil
+    new_item = item.update(item_params)
+    if item_params[:merchant_id].nil? || Merchant.exists?(item_params[:merchant_id])
       render json: ItemSerializer.new(item), status: 202
     else
-      render status: 404
+      render json: { errors: { details: "item update unsuccessful" } },status: 400
     end
   end
 
