@@ -16,7 +16,7 @@ ruby 2.7.2 rails 5.2.6
   gem 'faker'
   gem 'shoulda-matchers'* Configuration
   
-##Instructions
+## Instructions
 
 * Instalation
 
