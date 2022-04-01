@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :book do
-    title { Faker::Book.name }
+  factory :merchant do
+    name { Faker::Company.name }
   end
 end
