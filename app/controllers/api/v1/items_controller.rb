@@ -27,8 +27,14 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def find
-    if params[:name] == nil
-      render json: { data: { error:"Parameter cannot be missing" } }, status: 200
+    if params[:min_price] != nil
+      item = Item.min_price
+      render json: ItemSerializer.new(item)
+    elsif params[:max_price] != nil
+      item = Item.max_price
+      render json: ItemSerializer.new(item)
+    elsif params[:name] == nil
+        render json: { data: { error:"Parameter cannot be missing" } }, status: 200
     else
       item = Item.search(params[:name]).first
       if item != nil
