@@ -10,8 +10,7 @@ class Invoice < ApplicationRecord
     .where(transactions: { result: 'success'}, invoices: { status: 'shipped'})
     .where("invoices.created_at >=?", "#{start_date}")
     .where("invoices.created_at <=?", "#{end_date}")
-    .group('invoices.id')
     .select('SUM(invoice_items.quantity*invoice_items.unit_price) AS revenue')
-    .order('revenue DESC')
+    .first
   end
 end
